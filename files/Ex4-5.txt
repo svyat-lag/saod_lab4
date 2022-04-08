@@ -1,0 +1,17 @@
+public static void main(String[] args) throws InterruptedException {
+
+    /** Initialize the URL-pool  **/
+    URLPool pool = new URLPool(5);
+    pool.push(new URLDepthPair("https://mtuci.ru/", 0));
+
+    if (pendingURLs.size() == 0) {
+            waitingThreads++;
+            try {
+                this.wait();
+            }
+            catch (InterruptedException e) {
+                System.err.println("MalformedURLException: " + e.getMessage());
+                return null;
+            }
+        }
+    }
